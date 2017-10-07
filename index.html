@@ -12,9 +12,13 @@
   crossorigin="anonymous"></script>
 
   <!--Link to Bootstrap CDN-->
-
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+<!-- 
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	
+	<!--Materialize CDN Link-->	<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!--Link to stylesheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 </head>
@@ -22,17 +26,67 @@
 
 <body background="assets/images/background1.jpg">
 	<div class="container">
-		<h1 class="jumbotron text-center">Opportunities in Your Community</h1>
 
-		<div class="panel panel-default btns text-center" id="buttons-view">Buttons populate here</div>
-
+		<div class="row">
+			<h1 class="jumbotron text-center">Opportunities in Your Community</h1>
+		</div>
 		
-		<form class="panel panel-default text-center" id="topic-form">
-			<label class="text" for="topic-input">Enter topic here:</label>
-			<input class="text" type="text" id="topic-input"><br>
-			<input class="btns" id="add-topic" type="submit" value="Add topic">			
-		</form>
-		<div class="text text-center" id="topics-appear-here">Extensions for the button topics clicked populate here</div>
+		<div class="row">
+			<div class="collection with-header text-center" id="buttons-view">Buttons populate here</div>
+		
+			
+			<form class="collection with-header text-center" id="topic-form">
+				<label class="text" for="topic-input">Enter topic here:</label>
+				<input class="text" type="text" id="topic-input"><br>
+				<input class="btns" id="add-topic" type="submit" value="Add topic">			
+			</form>
+		</div>
+
+		<div class="row">
+
+
+			<ul class="collection with-header">
+	        	<li class="collection-header" id="topics-appear-here"><h4>Extensions to button topics</h4></li>
+	        	<li class="collection-item">
+					<div class="row">
+						<div class="col s4">
+							<div class="card">Jobs
+								<div class="card-image" id="jobsPic">
+									<a href="https://placeholder.com"><img src="http://via.placeholder.com/150x200"></a>
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col s4">
+							<div class="card">Meetups
+								<div class="card-image" id="meetupsPic">
+									<a href="https://placeholder.com"><img src="http://via.placeholder.com/150x200"></a>
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col s4">
+							<div class="card">Events
+								<div class="card-image" id="eventsPic">
+									<a href="https://placeholder.com"><img src="http://via.placeholder.com/150x200"></a>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+	        	</li>
+	     	</ul>
+			
+			<!-- <div class="text text-center" >Extensions for the button topics clicked populate here
+
+			<div class="col s12 collection with-header">Jobs</div>
+			<div class="col s12 collection with-header">Meetups</div>
+			<div class="col s12 collection with-header">Events</div>
+		
+			</div> -->
+		</div>	
 	</div>
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
