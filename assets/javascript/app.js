@@ -1,15 +1,15 @@
 topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health & Wellness", "Environment", "Activism", "Fashion & Beauty", "Fitness", "Food", "Games", "Cars & Bikes", "Animals", "Volunteering"];
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 
 //-------------------------
-//Meetup ajax 
+// Meetup ajax 
 //-------------------------
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 
 function renderButtons() {
