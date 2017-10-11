@@ -20,7 +20,7 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info");
+        a.addClass("gif btn btn-info " + topics[i]);
         a.text(topics[i]);
         $("#buttons-view").append(a);
     };
