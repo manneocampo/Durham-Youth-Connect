@@ -1,4 +1,47 @@
-topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health & Wellness", "Environment", "Activism", "Fashion & Beauty", "Fitness", "Food", "Games", "Cars & Bikes", "Animals", "Volunteering"];
+topics = [
+{   topicName: "Art",
+    className: "art"
+},
+{   topicName: "History",
+    className: "history"
+},
+{   topicName: "Reading & Writing",
+    className: "readingWriting"
+},
+{   topicName: "Technology",
+    className: "technology"
+},
+{   topicName: "Health & Wellness",
+    className: "healthWellness"
+},
+{   topicName: "Environment",
+    className: "environment"
+},
+{   topicName: "Activism",
+    className: "activism"
+},
+{   topicName: "Fashion & Beauty",
+    className: "fashionBeauty"
+},
+{   topicName: "Fitness",
+    className: "fitness"
+},
+{   topicName: "Food",
+    className: "food"
+},
+{   topicName: "Games",
+    className: "games"
+},
+{   topicName: "Cars & Bikes",
+    className: "carsBikes"
+},
+{   topicName: "Animals",
+    className: "animals"
+},
+{   topicName: "Volunteering",
+    className: "volunteering"
+}
+];
 
 //-------------------------
 // Glassdoor ajax 
@@ -32,16 +75,17 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info " + topics[i]);
-        a.text(topics[i]);
+        a.addClass("gif btn btn-info " + topics[i].className);
+        a.text(topics[i].topicName);
         $("#buttons-view").append(a);
     };
 }
 renderButtons();
 
-$("#add-topic").on("click", function(event) {
-    event.preventDefault();
-    var newTopic = $("#topic-input").val().trim();
-    topics.push(newTopic);
-    renderButtons();
-});
+// $("#add-topic").on("click", function(event) {
+//     event.preventDefault();
+//     var newTopic = $("#topic-input").val().trim();
+//     //Nicole researching how to push the new button into the object
+//     topics.topicName.push(newTopic);
+//     renderButtons();
+// });
