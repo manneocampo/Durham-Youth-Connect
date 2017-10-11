@@ -1,7 +1,7 @@
 topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health & Wellness", "Environment", "Activism", "Fashion & Beauty", "Fitness", "Food", "Games", "Cars & Bikes", "Animals", "Volunteering"];
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=pharmaceuticals&userip=192.168.43.42&useragent=Mozilla/%2F4.0"
 //-------------------------
@@ -12,7 +12,7 @@ var queryURL = "https://api.meetup.com/find/groups?zip=27701&radius=20&category=
 //-------------------------
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 
 function renderButtons() {
@@ -20,7 +20,7 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info");
+        a.addClass("gif btn btn-info " + topics[i]);
         a.text(topics[i]);
         $("#buttons-view").append(a);
     };
@@ -33,4 +33,3 @@ $("#add-topic").on("click", function(event) {
     topics.push(newTopic);
     renderButtons();
 });
-
