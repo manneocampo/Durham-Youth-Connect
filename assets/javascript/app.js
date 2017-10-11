@@ -3,11 +3,17 @@ topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health 
 //-------------------------
 //Glassdoor ajax 
 //-------------------------
-var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=pharmaceuticals&userip=192.168.43.42&useragent=Mozilla/%2F4.0"
+
+function displayJobs() {
+    var = 
+    var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0"
+
+}
 //-------------------------
 //Meetup ajax 
 
-var queryURL = "https://api.meetup.com/find/groups?zip=27701&radius=20&category=20&order=members"
+var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
+
 
 //-------------------------
 
