@@ -1,7 +1,7 @@
 topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health & Wellness", "Environment", "Activism", "Fashion & Beauty", "Fitness", "Food", "Games", "Cars & Bikes", "Animals", "Volunteering"];
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 
 function displayJobs() {
@@ -24,7 +24,7 @@ var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a262287868
 //-------------------------
 
 //-------------------------
-//Glassdoor ajax 
+// Glassdoor ajax 
 //-------------------------
 
 function renderButtons() {
@@ -32,7 +32,7 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info");
+        a.addClass("gif btn btn-info " + topics[i]);
         a.text(topics[i]);
         $("#buttons-view").append(a);
     };
@@ -45,4 +45,3 @@ $("#add-topic").on("click", function(event) {
     topics.push(newTopic);
     renderButtons();
 });
-
