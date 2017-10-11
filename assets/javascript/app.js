@@ -5,9 +5,15 @@ topics = ["Art", "History", "Music", "Reading & Writing", "Technology", "Health 
 //-------------------------
 
 function displayJobs() {
-    var = 
-    var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0"
+    var jobTitle = Activism; 
+    var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0";
 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response) {
+        
+    })
 }
 //-------------------------
 //Meetup ajax 
