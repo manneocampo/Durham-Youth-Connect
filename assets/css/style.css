@@ -2,6 +2,16 @@
 	outline: 1px solid blue;
 }
 
+#headerDiv {
+	background: url(../images/DurhamSunset2.jpg), #448aff;
+	background-size: 100%;
+}
+
+#headerTitle {
+	color: rgb(255,247,247);
+	line-height: 214%;
+}
+
 #enterTopic {
 	font-size: 20px;
 }
@@ -26,5 +36,7 @@
 }
 .card {
 	background-color:#0d47a1;
-	font-color:#ffffff; 
+	font-size: 20px;
+	color: #e3f2fd;
+
 }
