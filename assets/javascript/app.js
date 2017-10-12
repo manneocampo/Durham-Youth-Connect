@@ -43,41 +43,37 @@ topics = [
 }
 ];
 
-//-------------------------
-// Glassdoor ajax 
-//-------------------------
-
+// Glassdoor 
 function displayJobs() {
-    var jobTitle = "Activism"; 
-    var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0";
+    var jobTitle = "activism"; 
+    var queryURL = "https://api.glassdoor.com/api/api.htm?v=1.1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=pharmaceuticals&userip=45.37.69.64&useragent=Mozilla/%2F4.0";
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        header: {
+            "Access-Control-Allow-Credentials": true,
+            "Access-Control-Allow-Origin": null
+        }
+    }).done(function(response) {
+      console.log(response);
+    })
+}
+displayJobs();
+
+//Meetup  
+function displayMeetups() {
+// var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
+    var queryURL = "https://api.meetup.com1/find/groups2?zip=27703&radius=1&category=253";
 
     $.ajax({
         url: queryURL,
         method: "GET"
     }).done(function(response) {
-       var database = response.employers
-       console.log(database);
-
-       var jobName = database.name
-/*       var jobRating
-       var industry
-       var location
-*/
-       console.log(jobName); 
+      console.log(response);
     })
 }
-displayJobs();
-//-------------------------
-//Meetup ajax 
+displayMeetups();
 
-var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members";
-
-
-//-------------------------
-
-//-------------------------
-// Glassdoor ajax 
-//-------------------------
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -91,10 +87,16 @@ function renderButtons() {
 }
 renderButtons();
 
+// //------Add new topic/button----------------------
 // $("#add-topic").on("click", function(event) {
 //     event.preventDefault();
 //     var newTopic = $("#topic-input").val().trim();
-//     //Nicole researching how to push the new button into the object
-//     topics.topicName.push(newTopic);
+//     var newClassName = newTopic.toLowerCase().replace(/ +/g, "");
+//     var newTopicObject = {
+//         topicName: newTopic,
+//         className: newClassName
+//     };
+//     console.log("object working: " + newTopicObject.topicName, newTopicObject.className);
+//     topics.push(newTopicObject);
 //     renderButtons();
 // });
