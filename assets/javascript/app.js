@@ -12,9 +12,18 @@ function displayJobs() {
         url: queryURL,
         method: "GET"
     }).done(function(response) {
-        
+       var database = response.employers
+       console.log(database);
+
+       var jobName = database.name
+/*       var jobRating
+       var industry
+       var location
+*/
+       console.log(jobName); 
     })
 }
+displayJobs()
 //-------------------------
 //Meetup ajax 
 
