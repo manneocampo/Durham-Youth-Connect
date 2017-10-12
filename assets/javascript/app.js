@@ -45,20 +45,43 @@ topics = [
 
 // Glassdoor 
 function displayJobs() {
-    var jobTitle = "activism"; 
-    var queryURL = "https://api.glassdoor.com/api/api.htm?v=1.1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=pharmaceuticals&userip=45.37.69.64&useragent=Mozilla/%2F4.0";
+
+    var jobTitle = "Activism"; 
+    var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+
     $.ajax({
         url: queryURL,
-        method: "GET",
-        header: {
-            "Access-Control-Allow-Credentials": true,
-            "Access-Control-Allow-Origin": null
-        }
+        crossDomain: true,
+        dataType: 'jsonp',
+        method: "GET"
     }).done(function(response) {
-      console.log(response);
-    })
-}
+       var data = response.response.employers
+       console.log(data);
+
+       //Goes through each index to display data
+       for (var i = 0; i < data.length; i++){
+           //creating new div to display information
+           var jobDiv = $("<div>");
+           var jobName = $("<p>").text("Job Title: " + data[i].name);
+           jobDiv.append(jobName);
+           var jobWebsite = $("<p>").text("Website: " + data[i].website);
+           jobDiv.append(jobWebsite);
+           var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+           var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+           $("#jobDisplay").append(jobDiv);
+        }
+
+};
 displayJobs();
+
+
+
+//-------------------------
+//Meetup ajax 
+
+var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members";
+
+
 
 //Meetup  
 function displayMeetups() {
