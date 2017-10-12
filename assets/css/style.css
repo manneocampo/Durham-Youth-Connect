@@ -3,7 +3,13 @@
 }
 
 #headerDiv {
-	background: url(assets/images/DurhamSunset2.jpg);
+	background: url(../images/DurhamSunset2.jpg), #448aff;
+	background-size: 100%;
+}
+
+#headerTitle {
+	color: rgb(255,247,247);
+	line-height: 214%;
 }
 
 #enterTopic {
