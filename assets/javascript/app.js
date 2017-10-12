@@ -48,7 +48,7 @@ topics = [
 //-------------------------
 
 function displayJobs() {
-    var jobTitle = Activism; 
+    var jobTitle = "Activism"; 
     var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0";
 
     $.ajax({
@@ -66,11 +66,11 @@ function displayJobs() {
        console.log(jobName); 
     })
 }
-displayJobs()
+displayJobs();
 //-------------------------
 //Meetup ajax 
 
-var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
+var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members";
 
 
 //-------------------------
