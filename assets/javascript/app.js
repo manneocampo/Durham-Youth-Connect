@@ -49,23 +49,32 @@ topics = [
 
 function displayJobs() {
     var jobTitle = "Activism"; 
-    var queryURL = "http://api.glassdoor.com/api/api.htm?v=1&format=json&t.p=207039&t.k=ceLZoILrTzK&action=employers&q=" + jobTitle + "&userip=192.168.43.42&useragent=Mozilla/%2F4.0";
+    var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
     $.ajax({
         url: queryURL,
+        crossDomain: true,
+        dataType: 'jsonp',
         method: "GET"
     }).done(function(response) {
-       var database = response.employers
-       console.log(database);
+       var data = response.response.employers
+       console.log(data);
 
-       var jobName = database.name
-/*       var jobRating
-       var industry
-       var location
-*/
-       console.log(jobName); 
+       //Goes through each index to display data
+       for (var i = 0; i < data.length; i++){
+           //creating new div to display information
+           var jobDiv = $("<div>");
+           var jobName = $("<p>").text("Job Title: " + data[i].name);
+           jobDiv.append(jobName);
+           var jobWebsite = $("<p>").text("Website: " + data[i].website);
+           jobDiv.append(jobWebsite);
+           var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+           var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+           $("#jobDisplay").append(jobDiv);
+        }
     })
-}
+};
+displayJobs();
 
 
 //-------------------------
