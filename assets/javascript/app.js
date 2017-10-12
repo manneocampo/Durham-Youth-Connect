@@ -66,7 +66,8 @@ function displayJobs() {
        console.log(jobName); 
     })
 }
-displayJobs();
+
+
 //-------------------------
 //Meetup ajax 
 
