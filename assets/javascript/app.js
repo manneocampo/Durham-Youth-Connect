@@ -43,11 +43,9 @@ topics = [
 }
 ];
 
-//-------------------------
-// Glassdoor ajax 
-//-------------------------
-
+// Glassdoor 
 function displayJobs() {
+
     var jobTitle = "Activism"; 
     var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
@@ -72,9 +70,10 @@ function displayJobs() {
            var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
            $("#jobDisplay").append(jobDiv);
         }
-    })
+
 };
 displayJobs();
+
 
 
 //-------------------------
@@ -83,11 +82,21 @@ displayJobs();
 var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members";
 
 
-//-------------------------
 
-//-------------------------
-// Glassdoor ajax 
-//-------------------------
+//Meetup  
+function displayMeetups() {
+// var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
+    var queryURL = "https://api.meetup.com1/find/groups2?zip=27703&radius=1&category=253";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).done(function(response) {
+      console.log(response);
+    })
+}
+displayMeetups();
+
 
 function renderButtons() {
     $("#buttons-view").empty();
@@ -101,10 +110,16 @@ function renderButtons() {
 }
 renderButtons();
 
+// //------Add new topic/button----------------------
 // $("#add-topic").on("click", function(event) {
 //     event.preventDefault();
 //     var newTopic = $("#topic-input").val().trim();
-//     //Nicole researching how to push the new button into the object
-//     topics.topicName.push(newTopic);
+//     var newClassName = newTopic.toLowerCase().replace(/ +/g, "");
+//     var newTopicObject = {
+//         topicName: newTopic,
+//         className: newClassName
+//     };
+//     console.log("object working: " + newTopicObject.topicName, newTopicObject.className);
+//     topics.push(newTopicObject);
 //     renderButtons();
 // });
