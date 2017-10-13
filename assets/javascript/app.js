@@ -5,29 +5,24 @@ topics = [
 },
 {   topicName: "History",
     className: "history",
-    meetupCat: 
-
+    meetupCat: 0
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
     meetupCat: 18
     //add category 36 too
-
 },
 {   topicName: "Technology",
     className: "technology",
     meetupCat: 34   
-
 },
 {   topicName: "Health & Wellness",
     className: "healthWellness",
     meetupCat: 14
-
 },
 {   topicName: "Environment",
     className: "environment",
     meetupCat: 4
-
 },
 {   topicName: "Activism",
     className: "activism",
@@ -59,7 +54,7 @@ topics = [
 },
 {   topicName: "Volunteering",
     className: "volunteering",
-    meetupCat: 
+    meetupCat: 0
 }
 ];
 
@@ -96,20 +91,20 @@ function displayJobs() {
 displayJobs();
 
 //Meetup  
-function displayMeetups() {
-    var meetupCat = ;
-    var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-    console.log("Query URL is: " + queryURL);
-    $.ajax({
-        url: queryURL,
-        crossDomain: true,
-        dataType: 'jsonp',
-        method: "GET"
-    }).done(function(response) {
-      console.log(response);
-    })
-}
-displayMeetups();
+// function displayMeetups() {
+//     var meetupCat = ;
+//     var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+//     console.log("Query URL is: " + queryURL);
+//     $.ajax({
+//         url: queryURL,
+//         crossDomain: true,
+//         dataType: 'jsonp',
+//         method: "GET"
+//     }).done(function(response) {
+//       console.log(response);
+//     })
+// }
+// displayMeetups();
 
 
 function renderButtons() {
