@@ -1,53 +1,70 @@
 topics = [
 {   topicName: "Art",
-    className: "art"
+    className: "art",
+    meetupCat: 1
 },
 {   topicName: "History",
-    className: "history"
+    className: "history",
+    meetupCat: 0
 },
 {   topicName: "Reading & Writing",
-    className: "readingWriting"
+    className: "readingWriting",
+    meetupCat: 18
+    //add category 36 too
 },
 {   topicName: "Technology",
-    className: "technology"
+    className: "technology",
+    meetupCat: 34   
 },
 {   topicName: "Health & Wellness",
-    className: "healthWellness"
+    className: "healthWellness",
+    meetupCat: 14
 },
 {   topicName: "Environment",
-    className: "environment"
+    className: "environment",
+    meetupCat: 4
 },
 {   topicName: "Activism",
-    className: "activism"
+    className: "activism",
+    meetupCat: 13
 },
 {   topicName: "Fashion & Beauty",
-    className: "fashionBeauty"
+    className: "fashionBeauty",
+    meetupCat: 8
 },
 {   topicName: "Fitness",
-    className: "fitness"
+    className: "fitness",
+    meetupCat: 9
 },
 {   topicName: "Food",
-    className: "food"
+    className: "food",
+    meetupCat: 10
 },
 {   topicName: "Games",
-    className: "games"
+    className: "games",
+    meetupCat: 11
 },
 {   topicName: "Cars & Bikes",
-    className: "carsBikes"
+    className: "carsBikes",
+    meetupCat: 3
 },
 {   topicName: "Animals",
-    className: "animals"
+    className: "animals",
+    meetupCat: 26
 },
 {   topicName: "Volunteering",
-    className: "volunteering"
+    className: "volunteering",
+    meetupCat: 0
 }
 ];
 
 // Glassdoor 
 function displayJobs() {
+
   $("#jobDisplay").empty();
     var jobTitle = $(this).attr("job-name");
     console.log(jobTitle + "Job Title");
+
     var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
     $.ajax({
@@ -78,19 +95,20 @@ function displayJobs() {
 
 
 //Meetup  
-function displayMeetups() {
-// var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
-    var queryURL = "https://api.meetup.com/find/groups?zip=27703&radius=1&category=25&order=members";
-    $.ajax({
-        url: queryURL,
-        crossDomain: true,
-        dataType: 'jsonp',
-        method: "GET"
-    }).done(function(response) {
-      console.log(response);
-    })
-}
-displayMeetups();
+// function displayMeetups() {
+//     var meetupCat = ;
+//     var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+//     console.log("Query URL is: " + queryURL);
+//     $.ajax({
+//         url: queryURL,
+//         crossDomain: true,
+//         dataType: 'jsonp',
+//         method: "GET"
+//     }).done(function(response) {
+//       console.log(response);
+//     })
+// }
+// displayMeetups();
 
 //Turning topics array into buttons
 function renderButtons() {
@@ -99,13 +117,17 @@ function renderButtons() {
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
         a.addClass("gif btn btn-info displayer" + topics[i].className);
+
         a.attr("job-name", topics[i].topicName)
         console.log(a + "Attribute")
+
         a.text(topics[i].topicName);
         $("#buttons-view").append(a);
     };
 }
-$(document).on("click", ".gif", displayJobs);
+
+$(document).on("click", ".displayer", displayJobs);
+
 renderButtons();
 
 
