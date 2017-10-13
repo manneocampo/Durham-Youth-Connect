@@ -5,11 +5,16 @@
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
 	background-size: 100%;
+
 }
 
 #headerTitle {
 	color: rgb(255,247,247);
-	line-height: 214%;
+	line-height: 100%;
+	font-size: 50px;
+	display:table;
+	margin:0 auto;
+	height:230px;
 }
 
 #enterTopic {
@@ -33,10 +38,17 @@
 
 .btn {
 	background-color:#0d47a1;
+	display:table;
+	display:inline;
+	margin: 10px;
 }
 .card {
 	background-color:#0d47a1;
 	font-size: 20px;
 	color: #e3f2fd;
-
+}
+#topics-appear-here {
+	background-color:#0d47a1;
+	font-size: 20px;
+	color: #e3f2fd;
 }
