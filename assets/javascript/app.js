@@ -65,7 +65,7 @@ function displayJobs() {
     var jobTitle = $(this).attr("job-name");
     console.log(jobTitle + "Job Title");
 
-    var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+    var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
     $.ajax({
         url: queryURL,
@@ -94,21 +94,21 @@ function displayJobs() {
 };
 
 
-//Meetup  
-// function displayMeetups() {
-//     var meetupCat = ;
-//     var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-//     console.log("Query URL is: " + queryURL);
-//     $.ajax({
-//         url: queryURL,
-//         crossDomain: true,
-//         dataType: 'jsonp',
-//         method: "GET"
-//     }).done(function(response) {
-//       console.log(response);
-//     })
-// }
-// displayMeetups();
+/*Meetup  
+function displayMeetups() {
+    var meetupCat = ;
+    var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+    console.log("Query URL is: " + queryURL);
+    $.ajax({
+        url: queryURL,
+        crossDomain: true,
+        dataType: 'jsonp',
+        method: "GET"
+    }).done(function(response) {
+      console.log(response);
+    })
+}
+displayMeetups();*/
 
 //Turning topics array into buttons
 function renderButtons() {
