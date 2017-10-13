@@ -5,12 +5,11 @@
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
 	background-size: 100%;
-
 }
 
 #headerTitle {
 	color: rgb(255,247,247);
-	line-height: 100%;
+	line-height: 110%;
 	font-size: 50px;
 	display:table;
 	margin:0 auto;
