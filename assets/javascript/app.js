@@ -45,7 +45,7 @@ topics = [
 
 // Glassdoor 
 function displayJobs() {
-    var jobTitle = "Activism"; 
+    var jobTitle = $(this).attr("job-name"); 
     var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
     $.ajax({
@@ -65,7 +65,9 @@ function displayJobs() {
            var jobWebsite = $("<p>").text("Website: " + data[i].website);
            jobDiv.append(jobWebsite);
            var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+           jobDiv.append(jobRating);
            var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+           jobDiv.append(jobIndustry);
            $("#jobDisplay").append(jobDiv);
         }
     })
@@ -94,12 +96,16 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info " + topics[i].className);
+        a.addClass("gif btn btn-info displayer" + topics[i].className);
+        a.attr("job-name", topics[i])
         a.text(topics[i].topicName);
         $("#buttons-view").append(a);
     };
 }
+$(document).on("click", ".btn", displayJobs);
 renderButtons();
+
+
 
 // //------Add new topic/button----------------------
 // $("#add-topic").on("click", function(event) {
