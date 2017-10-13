@@ -1,45 +1,65 @@
 topics = [
 {   topicName: "Art",
-    className: "art"
+    className: "art",
+    meetupCat: 1
 },
 {   topicName: "History",
-    className: "history"
+    className: "history",
+    meetupCat: 
+
 },
 {   topicName: "Reading & Writing",
-    className: "readingWriting"
+    className: "readingWriting",
+    meetupCat: 18
+    //add category 36 too
+
 },
 {   topicName: "Technology",
-    className: "technology"
+    className: "technology",
+    meetupCat: 34   
+
 },
 {   topicName: "Health & Wellness",
-    className: "healthWellness"
+    className: "healthWellness",
+    meetupCat: 14
+
 },
 {   topicName: "Environment",
-    className: "environment"
+    className: "environment",
+    meetupCat: 4
+
 },
 {   topicName: "Activism",
-    className: "activism"
+    className: "activism",
+    meetupCat: 13
 },
 {   topicName: "Fashion & Beauty",
-    className: "fashionBeauty"
+    className: "fashionBeauty",
+    meetupCat: 8
 },
 {   topicName: "Fitness",
-    className: "fitness"
+    className: "fitness",
+    meetupCat: 9
 },
 {   topicName: "Food",
-    className: "food"
+    className: "food",
+    meetupCat: 10
 },
 {   topicName: "Games",
-    className: "games"
+    className: "games",
+    meetupCat: 11
 },
 {   topicName: "Cars & Bikes",
-    className: "carsBikes"
+    className: "carsBikes",
+    meetupCat: 3
 },
 {   topicName: "Animals",
-    className: "animals"
+    className: "animals",
+    meetupCat: 26
 },
 {   topicName: "Volunteering",
-    className: "volunteering"
+    className: "volunteering",
+    meetupCat: 
 }
 ];
 
@@ -77,8 +97,9 @@ displayJobs();
 
 //Meetup  
 function displayMeetups() {
-// var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=25&order=members"
-    var queryURL = "https://api.meetup.com/find/groups?zip=27703&radius=1&category=25&order=members";
+    var meetupCat = ;
+    var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+    console.log("Query URL is: " + queryURL);
     $.ajax({
         url: queryURL,
         crossDomain: true,
