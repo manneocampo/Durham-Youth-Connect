@@ -126,7 +126,7 @@ function renderButtons() {
     };
 }
 
-$(document).on("click", ".btn", displayJobs, );
+$(document).on("click", ".btn", displayJobs);
 
 renderButtons();
 
