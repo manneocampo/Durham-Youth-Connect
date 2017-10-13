@@ -45,7 +45,9 @@ topics = [
 
 // Glassdoor 
 function displayJobs() {
-    var jobTitle = $(this).attr("job-name"); 
+  $("#jobDisplay").empty();
+    var jobTitle = $(this).attr("job-name");
+    console.log(jobTitle + "Job Title");
     var queryURL = "http://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
 
     $.ajax({
@@ -73,7 +75,7 @@ function displayJobs() {
     })
 
 };
-displayJobs();
+
 
 //Meetup  
 function displayMeetups() {
@@ -90,19 +92,20 @@ function displayMeetups() {
 }
 displayMeetups();
 
-
+//Turning topics array into buttons
 function renderButtons() {
     $("#buttons-view").empty();
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
         a.addClass("gif btn btn-info displayer" + topics[i].className);
-        a.attr("job-name", topics[i])
+        a.attr("job-name", topics[i].topicName)
+        console.log(a + "Attribute")
         a.text(topics[i].topicName);
         $("#buttons-view").append(a);
     };
 }
-$(document).on("click", ".btn", displayJobs);
+$(document).on("click", ".gif", displayJobs);
 renderButtons();
 
 
