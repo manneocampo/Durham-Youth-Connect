@@ -141,7 +141,7 @@ $(document).on("click", ".btn", function() {
       $("#eventDisplay").empty();
       var eventTitle = $(_this).attr("job-name");
       console.log(eventTitle + "Event Title");
-      var queryURL = "http://api.eventful.com/json/events/search?app_key=DF6QBLC8cHbjpQZc&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
+      var queryURL = "https://api.eventful.com/json/events/search?app_key=DF6QBLC8cHbjpQZc&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
     $.ajax({
       url: queryURL,
       crossDomain: true,
