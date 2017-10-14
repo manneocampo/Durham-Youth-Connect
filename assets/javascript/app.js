@@ -58,6 +58,14 @@ topics = [
 }
 ];
 
+function searchArray (array, topic) {
+    console.log(array, topic);
+    return array.filter(function(obj){
+        return obj.topicName === topic;
+    })[0].meetupCat;
+}
+
+
 //Turning topics array into buttons
 function renderButtons() {
     $("#buttons-view").empty();
@@ -75,20 +83,25 @@ function renderButtons() {
 }
 
 $(document).on("click", ".btn", function() {
-    // function displayMeetups() {
-    //     var meetupCat = 1;
-    //     var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-    //     console.log("Query URL is: " + queryURL);
-    //     $.ajax({
-    //         url: queryURL,
-    //         crossDomain: true,
-    //         dataType: 'jsonp',
-    //         method: "GET"
-    //     }).done(function(response) {
-    //       console.log(response);
-    //     })
-    // }
-    // displayMeetups();
+
+    var _this=this;
+
+    function displayMeetups() {
+
+        var meetupCat = searchArray(topics, $(_this).attr("job-name"));
+            console.log("MeetupCat: ", meetupCat);
+        var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+        console.log("Query URL is: " + queryURL);
+        $.ajax({
+            url: queryURL,
+            crossDomain: true,
+            dataType: 'jsonp',
+            method: "GET"
+        }).done(function(response) {
+          console.log(response);
+        })
+    }
+    displayMeetups();
 
 
     function displayJobs() {
