@@ -103,9 +103,9 @@ $(document).on("click", ".btn", function() {
     displayMeetups();
 
 
-    function displayJobs() {
+    function displayGlassdoor() {
       $("#jobDisplay").empty();
-        var jobTitle = $(this).attr("job-name");
+        var jobTitle = $(_this).attr("job-name");
         console.log(jobTitle + "Job Title");
         var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
         $.ajax({
@@ -115,13 +115,16 @@ $(document).on("click", ".btn", function() {
             method: "GET"
         }).done(function(response) {
            var data = response.response.employers
-           console.log(data);
+           console.log(data + "glassdoor data");
            //Goes through each index to display data
             for (var i = 0; i < data.length; i++){
                //creating new div to display information
                var jobDiv = $("<div>");
                var jobName = $("<p>").text("Job Title: " + data[i].name);
+               jobName.addClass("jobName");
                jobDiv.append(jobName);
+               var jobWorkLife = $("<p>").text("Work Life Balance Rating: " + data[i].workLifeBalanceRating);
+               jobDiv.append(jobWorkLife);
                var jobWebsite = $("<p>").text("Website: " + data[i].website);
                jobDiv.append(jobWebsite);
                var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
@@ -132,7 +135,34 @@ $(document).on("click", ".btn", function() {
             }
         })
     };
-    displayJobs();
+    displayGlassdoor();
+
+    function displayEventful (){
+      $("#eventDisplay").empty();
+      var eventTitle = $(_this).attr("job-name");
+      console.log(eventTitle + "Event Title");
+      var queryURL = "http://api.eventful.com/json/events/search?app_key=DF6QBLC8cHbjpQZc&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
+    $.ajax({
+      url: queryURL,
+      crossDomain: true,
+      dataType: 'jsonp',
+      method: "GET"  
+    }).done(function(response){
+      var data = response.events.event
+      console.log(data+ "Eventful data");
+      for(var i = 0;i < data.length;i++){
+        var eventDiv = $("<div>");
+        var eventTitle = $("<p>").text("Event Title: " + data[i].title);
+        eventDiv.append(eventTitle);
+        var eventAddress = $("<p>").text("Address: " + data[i].venue_address);
+        eventDiv.append(eventAddress);
+        var eventUrl = $("<p>").text("Website: " + data[i].url);
+        eventDiv.append(eventUrl);
+        $("#eventDisplay").append(eventDiv);
+      }
+    })
+    }
+    displayEventful();
 });
 
 renderButtons();
