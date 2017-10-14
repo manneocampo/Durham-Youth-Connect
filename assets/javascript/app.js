@@ -58,57 +58,12 @@ topics = [
 }
 ];
 
-// Glassdoor 
-function displayJobs() {
-
-  $("#jobDisplay").empty();
-    var jobTitle = $(this).attr("job-name");
-    console.log(jobTitle + "Job Title");
-
-    var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
-
-    $.ajax({
-        url: queryURL,
-        crossDomain: true,
-        dataType: 'jsonp',
-        method: "GET"
-    }).done(function(response) {
-       var data = response.response.employers
-       console.log(data);
-       //Goes through each index to display data
-        for (var i = 0; i < data.length; i++){
-           //creating new div to display information
-           var jobDiv = $("<div>");
-           var jobName = $("<p>").text("Job Title: " + data[i].name);
-           jobDiv.append(jobName);
-           var jobWebsite = $("<p>").text("Website: " + data[i].website);
-           jobDiv.append(jobWebsite);
-           var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
-           jobDiv.append(jobRating);
-           var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
-           jobDiv.append(jobIndustry);
-           $("#jobDisplay").append(jobDiv);
-        }
-    })
-
-};
-
-
-/*Meetup  
-function displayMeetups() {
-    var meetupCat = ;
-    var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-    console.log("Query URL is: " + queryURL);
-    $.ajax({
-        url: queryURL,
-        crossDomain: true,
-        dataType: 'jsonp',
-        method: "GET"
-    }).done(function(response) {
-      console.log(response);
-    })
+function searchArray (array, topic) {
+    console.log(array, topic);
+    return array.filter(function(obj){
+        return obj.topicName === topic;
+    })[0].meetupCat;
 }
-displayMeetups();*/
 
 //Turning topics array into buttons
 function renderButtons() {
@@ -116,7 +71,7 @@ function renderButtons() {
     console.log("buttons view");
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
-        a.addClass("gif btn btn-info displayer" + topics[i].className);
+        a.addClass("btn btn-info displayer" + topics[i].className);
 
         a.attr("job-name", topics[i].topicName)
         console.log(a + "Attribute")
@@ -126,7 +81,59 @@ function renderButtons() {
     };
 }
 
-$(document).on("click", ".btn", displayJobs);
+$(document).on("click", ".btn", function() {
+
+    var _this=this;
+
+    function displayMeetups() {
+
+        var meetupCat = searchArray(topics, $(_this).attr("job-name"));
+            console.log("MeetupCat: ", meetupCat);
+        var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+        console.log("Query URL is: " + queryURL);
+        $.ajax({
+            url: queryURL,
+            crossDomain: true,
+            dataType: 'jsonp',
+            method: "GET"
+        }).done(function(response) {
+          console.log(response);
+        })
+    }
+    displayMeetups();
+
+
+    function displayJobs() {
+      $("#jobDisplay").empty();
+        var jobTitle = $(this).attr("job-name");
+        console.log(jobTitle + "Job Title");
+        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+        $.ajax({
+            url: queryURL,
+            crossDomain: true,
+            dataType: 'jsonp',
+            method: "GET"
+        }).done(function(response) {
+           var data = response.response.employers
+           console.log(data);
+           //Goes through each index to display data
+            for (var i = 0; i < data.length; i++){
+               //creating new div to display information
+               var jobDiv = $("<div>");
+               var jobName = $("<p>").text("Job Title: " + data[i].name);
+               jobDiv.append(jobName);
+               var jobWebsite = $("<p>").text("Website: " + data[i].website);
+               jobDiv.append(jobWebsite);
+               var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+               jobDiv.append(jobRating);
+               var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+               jobDiv.append(jobIndustry);
+               $("#jobDisplay").append(jobDiv);
+            }
+        })
+    };
+    displayJobs();
+});
 
 renderButtons();
 
