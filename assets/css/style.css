@@ -60,3 +60,13 @@ li a.active {
 #card {
     color: #8f99a1;
 }
+
+#aboutus {
+	color: #64b5f6;
+	background-color: white;
+	margin-bottom: 5px;
+}
+
+#main {
+	padding-top: 30px;
+}
