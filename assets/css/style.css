@@ -38,9 +38,8 @@
 
 .btn {
 	background-color:#0d47a1;
-	display:table;
-	display:inline;
 	margin: 10px;
+	width:calc(25% - 20px);
 }
 .panel {
 	background-color:#0d47a1;
