@@ -1,6 +1,6 @@
-* {
+/** {
 	outline: 1px solid blue;
-}
+}*/
 
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
@@ -50,4 +50,7 @@
 	background-color:#0d47a1;
 	font-size: 20px;
 	color: #e3f2fd;
+}
+.card {
+    color: #8f99a1;
 }
