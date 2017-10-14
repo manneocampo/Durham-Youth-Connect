@@ -80,8 +80,11 @@ function displayJobs() {
            //creating new div to display information
            var jobDiv = $("<div>");
            var jobName = $("<p>").text("Job Title: " + data[i].name);
+           jobName.addClass("jobTitle");
            jobDiv.append(jobName);
-           var jobWebsite = $("<p>").text("Website: " + data[i].website);
+           var jobLife = $("<p>").text("Work Life Balance Rating: " + data[i].workLifeBalanceRating);
+           jobDiv.append(jobLife);
+           var jobWebsite = $("<a>").text("Website: " + data[i].website);
            jobDiv.append(jobWebsite);
            var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
            jobDiv.append(jobRating);
