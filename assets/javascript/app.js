@@ -65,7 +65,6 @@ function searchArray (array, topic) {
     })[0].meetupCat;
 }
 
-
 //Turning topics array into buttons
 function renderButtons() {
     $("#buttons-view").empty();
