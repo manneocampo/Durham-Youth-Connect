@@ -120,6 +120,7 @@ function renderButtons() {
 
         a.attr("job-name", topics[i].topicName)
         console.log(a + "Attribute")
+        debugger;
 
         a.text(topics[i].topicName);
         $("#buttons-view").append(a);
