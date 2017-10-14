@@ -58,6 +58,62 @@ topics = [
 }
 ];
 
+
+// Glassdoor 
+function displayJobs() {
+
+  $("#jobDisplay").empty();
+    var jobTitle = $(this).attr("job-name");
+    console.log(jobTitle + "Job Title");
+
+    var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+
+    $.ajax({
+        url: queryURL,
+        crossDomain: true,
+        dataType: 'jsonp',
+        method: "GET"
+    }).done(function(response) {
+       var data = response.response.employers
+       console.log(data);
+       //Goes through each index to display data
+        for (var i = 0; i < data.length; i++){
+           //creating new div to display information
+           var jobDiv = $("<div>");
+           var jobName = $("<p>").text("Job Title: " + data[i].name);
+           jobName.addClass("jobTitle");
+           jobDiv.append(jobName);
+           var jobLife = $("<p>").text("Work Life Balance Rating: " + data[i].workLifeBalanceRating);
+           jobDiv.append(jobLife);
+           var jobWebsite = $("<a>").text("Website: " + data[i].website);
+           jobDiv.append(jobWebsite);
+           var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+           jobDiv.append(jobRating);
+           var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+           jobDiv.append(jobIndustry);
+           $("#jobDisplay").append(jobDiv);
+        }
+    })
+
+};
+
+
+/*Meetup  
+function displayMeetups() {
+    var meetupCat = ;
+    var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+    console.log("Query URL is: " + queryURL);
+    $.ajax({
+        url: queryURL,
+        crossDomain: true,
+        dataType: 'jsonp',
+        method: "GET"
+    }).done(function(response) {
+      console.log(response);
+    })
+}
+displayMeetups();*/
+
 //Turning topics array into buttons
 function renderButtons() {
     $("#buttons-view").empty();
