@@ -86,26 +86,40 @@ $(document).on("click", ".btn", function() {
     var _this=this;
 
     function displayMeetups() {
-
+        $("#meetupDisplay").empty();
         var meetupCat = searchArray(topics, $(_this).attr("job-name"));
-            console.log("MeetupCat: ", meetupCat);
         var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-        console.log("Query URL is: " + queryURL);
         $.ajax({
             url: queryURL,
             crossDomain: true,
             dataType: 'jsonp',
             method: "GET"
         }).done(function(response) {
-          console.log(response);
+            var data = response.data;
+            console.log(data[0].name);
+            console.log(response);
+
+            for (var i = 0; i < data.length; i++){
+               var meetupDiv = $("<div>");
+
+               var meetupName = $("<p>").text(data[i].name);
+               meetupDiv.append(meetupName);
+
+               var meetupLink = $("<p>").text(data[i].link);
+               meetupDiv.append(meetupLink);
+
+               // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
+               // meetupDiv.append(nextMeeting);
+               $("#meetupDisplay").append(meetupDiv);
+            }
         })
     }
     displayMeetups();
 
 
-    function displayJobs() {
+    function displayGlassdoor() {
       $("#jobDisplay").empty();
-        var jobTitle = $(this).attr("job-name");
+        var jobTitle = $(_this).attr("job-name");
         console.log(jobTitle + "Job Title");
         var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
         $.ajax({
@@ -115,13 +129,16 @@ $(document).on("click", ".btn", function() {
             method: "GET"
         }).done(function(response) {
            var data = response.response.employers
-           console.log(data);
+           console.log(data + "glassdoor data");
            //Goes through each index to display data
             for (var i = 0; i < data.length; i++){
                //creating new div to display information
                var jobDiv = $("<div>");
                var jobName = $("<p>").text("Job Title: " + data[i].name);
+               jobName.addClass("jobName");
                jobDiv.append(jobName);
+               var jobWorkLife = $("<p>").text("Work Life Balance Rating: " + data[i].workLifeBalanceRating);
+               jobDiv.append(jobWorkLife);
                var jobWebsite = $("<p>").text("Website: " + data[i].website);
                jobDiv.append(jobWebsite);
                var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
@@ -132,7 +149,34 @@ $(document).on("click", ".btn", function() {
             }
         })
     };
-    displayJobs();
+    displayGlassdoor();
+
+    function displayEventful (){
+      $("#eventDisplay").empty();
+      var eventTitle = $(_this).attr("job-name");
+      console.log(eventTitle + "Event Title");
+      var queryURL = "https://api.eventful.com/json/events/search?app_key=DF6QBLC8cHbjpQZc&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
+    $.ajax({
+      url: queryURL,
+      crossDomain: true,
+      dataType: 'jsonp',
+      method: "GET"  
+    }).done(function(response){
+      var data = response.events.event
+      console.log(data+ "Eventful data");
+      for(var i = 0;i < data.length;i++){
+        var eventDiv = $("<div>");
+        var eventTitle = $("<p>").text("Event Title: " + data[i].title);
+        eventDiv.append(eventTitle);
+        var eventAddress = $("<p>").text("Address: " + data[i].venue_address);
+        eventDiv.append(eventAddress);
+        var eventUrl = $("<p>").text("Website: " + data[i].url);
+        eventDiv.append(eventUrl);
+        $("#eventDisplay").append(eventDiv);
+      }
+    })
+    }
+    displayEventful();
 });
 
 renderButtons();
