@@ -162,7 +162,7 @@ $(document).on("click", ".btn", function() {
       dataType: 'jsonp',
       method: "GET"  
     }).done(function(response){
-      var data = response.events.event
+      var data = response.events ? response.events.event : [];
       console.log(data+ "Eventful data");
       for(var i = 0;i < data.length;i++){
         var eventDiv = $("<div>");
