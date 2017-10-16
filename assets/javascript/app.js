@@ -86,18 +86,32 @@ $(document).on("click", ".btn", function() {
     var _this=this;
 
     function displayMeetups() {
-
+        $("#meetupDisplay").empty();
         var meetupCat = searchArray(topics, $(_this).attr("job-name"));
-            console.log("MeetupCat: ", meetupCat);
         var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
-        console.log("Query URL is: " + queryURL);
         $.ajax({
             url: queryURL,
             crossDomain: true,
             dataType: 'jsonp',
             method: "GET"
         }).done(function(response) {
-          console.log(response);
+            var data = response.data;
+            console.log(data[0].name);
+            console.log(response);
+
+            for (var i = 0; i < data.length; i++){
+               var meetupDiv = $("<div>");
+
+               var meetupName = $("<p>").text(data[i].name);
+               meetupDiv.append(meetupName);
+
+               var meetupLink = $("<p>").text(data[i].link);
+               meetupDiv.append(meetupLink);
+
+               // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
+               // meetupDiv.append(nextMeeting);
+               $("#meetupDisplay").append(meetupDiv);
+            }
         })
     }
     displayMeetups();
