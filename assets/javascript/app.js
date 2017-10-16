@@ -88,8 +88,7 @@ $(document).on("click", ".btn", function() {
     function displayMeetups() {
         $("#meetupDisplay").empty();
         var meetupCat = searchArray(topics, $(_this).attr("job-name"));
-        var key = meetUpKey || "";
-        var queryURL = "https://api.meetup.com/find/groups?key=" + key + "&zip=27703&radius=10&category=" + meetupCat;
+        var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
         $.ajax({
             url: queryURL,
             crossDomain: true,
@@ -121,9 +120,8 @@ $(document).on("click", ".btn", function() {
     function displayGlassdoor() {
       $("#jobDisplay").empty();
         var jobTitle = $(_this).attr("job-name");
-        var key = glassDoorKey || "";
         console.log(jobTitle + "Job Title");
-        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=" + key + "&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
         $.ajax({
             url: queryURL,
             crossDomain: true,
