@@ -61,7 +61,7 @@ topics = [
 },
 {   topicName: "Sports",
     className: "sports",
-    meetupCat: 16
+    meetupCat: 32
 }
 ];
 
