@@ -51,6 +51,10 @@ li a.active {
 	color: #e3f2fd;
 }
 
+.wrap {
+	word-wrap:break-word;
+}
+
 #topics-appear-here {
 	background-color:#0d47a1;
 	color: #e3f2fd;
