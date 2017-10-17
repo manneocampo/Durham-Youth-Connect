@@ -70,6 +70,10 @@ li a.active {
 	margin-bottom: 5px;
 }
 
+.row {
+	margin: 0 !important;
+}
+
 #main {
 	padding-top: 30px;
 }
