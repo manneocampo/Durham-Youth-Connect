@@ -60,6 +60,12 @@ justify-content: center;
 	color: #e3f2fd;
 }
 
+#meetupDisplay {
+	height: 250px;
+	overflow: auto;
+}
+
+
 .wrap {
 	word-wrap:break-word;
 }
@@ -92,20 +98,21 @@ justify-content: center;
 	background-color: white;
 	margin-bottom: 5px;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 
 .jobName {
 	font-weight: bolder;
 	font-size: 18px;
 }
-=======
-.row {
-     margin-bottom: 0px; 
+
+.moreInfo {
+/*	border: 1px solid #ccd2d5;
+*/	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
 }
->>>>>>> 565d81a1d8973bde0efc1378eb028c7800899b0e
-=======
+
 /*.row {
      margin-bottom: 0px; ???what is this for?
 }*/
->>>>>>> 12a2fe903f171ae3c572f11a10dcb8d1cb593fc9
+
