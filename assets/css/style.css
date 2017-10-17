@@ -79,3 +79,8 @@ li a.active {
 	background-color: white;
 	margin-bottom: 5px;
 }
+
+.jobName {
+	font-weight: bolder;
+	font-size: 18px;
+}

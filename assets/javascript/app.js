@@ -102,11 +102,15 @@ $(document).on("click", ".btn", function() {
             for (var i = 0; i < data.length; i++){
                var meetupDiv = $("<div>");
 
-               var meetupName = $("<p>").text(data[i].name);
+               var meetupName = $("<p>").text("Meetup Title: " + data[i].name);
+               meetupName.addClass("jobName");
                meetupDiv.append(meetupName);
 
-               var meetupLink = $("<p>").text(data[i].link);
-               meetupDiv.append(meetupLink);
+               var meetupLocation = $("<p>").text("Location: " + data[i].localized_location);
+               meetupDiv.append(meetupLocation);
+
+               var meetupLink = $("<p>").text("Website: " + data[i].link);
+               meetupDiv.append(meetupLink, $("<hr>"));
 
                // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
                // meetupDiv.append(nextMeeting);
@@ -141,10 +145,10 @@ $(document).on("click", ".btn", function() {
                jobDiv.append(jobWorkLife);
                var jobWebsite = $("<p>").text("Website: " + data[i].website);
                jobDiv.append(jobWebsite);
-               var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
-               jobDiv.append(jobRating);
+               var jobRating = $("<p><a href ='").text("Rating: " + data[i].ratingDescription);
+               jobDiv.append($("'></a>"), jobRating);
                var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
-               jobDiv.append(jobIndustry);
+               jobDiv.append(jobIndustry, $("<hr>"));
                $("#jobDisplay").append(jobDiv);
             }
         })
@@ -167,11 +171,12 @@ $(document).on("click", ".btn", function() {
       for(var i = 0;i < data.length;i++){
         var eventDiv = $("<div>");
         var eventTitle = $("<p>").text("Event Title: " + data[i].title);
+        eventTitle.addClass("jobName");
         eventDiv.append(eventTitle);
-        var eventAddress = $("<p>").text("Address: " + data[i].venue_address);
+        var eventAddress = $("<p>").text("Location: " + data[i].venue_address);
         eventDiv.append(eventAddress);
         var eventUrl = $("<p>").text("Website: " + data[i].url);
-        eventDiv.append(eventUrl);
+        eventDiv.append(eventUrl, $("<hr>"));
         $("#eventDisplay").append(eventDiv);
       }
     })
