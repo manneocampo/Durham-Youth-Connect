@@ -145,8 +145,8 @@ $(document).on("click", ".btn", function() {
                jobDiv.append(jobWorkLife);
                var jobWebsite = $("<p>").text("Website: " + data[i].website);
                jobDiv.append(jobWebsite);
-               var jobRating = $("<p><a href ='").text("Rating: " + data[i].ratingDescription);
-               jobDiv.append($("'></a>"), jobRating);
+               var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+               jobDiv.append(jobRating);
                var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
                jobDiv.append(jobIndustry, $("<hr>"));
                $("#jobDisplay").append(jobDiv);
@@ -201,3 +201,13 @@ renderButtons();
 //     topics.push(newTopicObject);
 //     renderButtons();
 // });
+
+// Mobile nav start
+
+
+  // Initialize collapse button
+  $(".button-collapse").sideNav();
+  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+  //$('.collapsible').collapsible();
+
+// Mobile nav end

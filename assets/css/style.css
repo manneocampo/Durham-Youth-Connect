@@ -79,8 +79,14 @@ li a.active {
 	background-color: white;
 	margin-bottom: 5px;
 }
+<<<<<<< HEAD
 
 .jobName {
 	font-weight: bolder;
 	font-size: 18px;
 }
+=======
+.row {
+     margin-bottom: 0px; 
+}
+>>>>>>> 565d81a1d8973bde0efc1378eb028c7800899b0e
