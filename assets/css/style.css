@@ -60,6 +60,12 @@ justify-content: center;
 	color: #e3f2fd;
 }
 
+#meetupDisplay {
+	height: 250px;
+	overflow: auto;
+}
+
+
 .wrap {
 	word-wrap:break-word;
 }
@@ -92,6 +98,15 @@ justify-content: center;
 	background-color: white;
 	margin-bottom: 5px;
 }
+.moreInfo {
+/*	border: 1px solid #ccd2d5;
+*/	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 10px;
+}
+
+
+
 /*.row {
      margin-bottom: 0px; ???what is this for?
 }*/
