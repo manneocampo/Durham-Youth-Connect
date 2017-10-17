@@ -38,17 +38,30 @@
 li a.active {
 	background-color: #90caf9;
 }
+
+#buttons-view {
+display: flex;
+flex-wrap:wrap;
+justify-content: center;
+
+}
 .btn {
 	background-color:#0d47a1;
 	margin: 5px;
 	margin-left:13px;
-	font-size:14px;
+	font-size:13px;
 	width:calc(25% - 20px);
+	letter-spacing:0px !important;
+	min-width: 189px;
 }
 .panel {
 	background-color:#0d47a1;
 	font-size: 20px;
 	color: #e3f2fd;
+}
+
+.wrap {
+	word-wrap:break-word;
 }
 
 #topics-appear-here {
@@ -66,6 +79,10 @@ li a.active {
 	margin-bottom: 5px;
 }
 
+.row {
+	margin: 0 !important;
+}
+
 #main {
 	padding-top: 30px;
 }
@@ -75,3 +92,6 @@ li a.active {
 	background-color: white;
 	margin-bottom: 5px;
 }
+/*.row {
+     margin-bottom: 0px; ???what is this for?
+}*/
