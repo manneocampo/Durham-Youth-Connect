@@ -100,6 +100,7 @@ function renderButtons() {
 
 $(document).on("click", ".btn", function() {
 
+
     var _this=this;
 
     function displayMeetups() {
@@ -119,14 +120,13 @@ $(document).on("click", ".btn", function() {
             for (var i = 0; i < data.length; i++){
                var meetupDiv = $("<div>");
 
-               var meetupName = $("<p>").text("Meetup Title: " + data[i].name);
-               meetupName.addClass("jobName");
+               var meetupName = $("<p>").html("<span class='textBold'>Meetup Title: </span>" + data[i].name);
                meetupDiv.append(meetupName);
 
-               var meetupLocation = $("<p>").text("Location: " + data[i].localized_location);
+               var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-               var meetupLink = $("<p>").text("Website: " + data[i].link);
+               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span>" + data[i].link);
                meetupDiv.append(meetupLink, $("<hr>"));
 
                // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
@@ -155,16 +155,16 @@ $(document).on("click", ".btn", function() {
             for (var i = 0; i < data.length; i++){
                //creating new div to display information
                var jobDiv = $("<div>");
-               var jobName = $("<p>").text("Job Title: " + data[i].name);
-               jobName.addClass("jobName");
+               var jobName = $("<p>").html("<span class='textBold'>Job Title: </span>" + data[i].name);
                jobDiv.append(jobName);
-               var jobWorkLife = $("<p>").text("Work Life Balance Rating: " + data[i].workLifeBalanceRating);
+               var jobWorkLife = $("<p>").html("<span class='textBold'>Work Life Balance Rating: </span>" + data[i].workLifeBalanceRating);
                jobDiv.append(jobWorkLife);
-               var jobWebsite = $("<p>").text("Website: " + data[i].website);
+               var jobWebsite = $("<p>").html("<span class='textBold'>Website: </span><a href='http://" + data[i].website + "' target= '_blank'>" + data[i].website + "</a>");
+               console.log(jobWebsite + "Website for glassdoor");               
                jobDiv.append(jobWebsite);
-               var jobRating = $("<p>").text("Rating: " + data[i].ratingDescription);
+               var jobRating = $("<p>").html("<span class='textBold'>Rating: </span>" + data[i].ratingDescription);
                jobDiv.append(jobRating);
-               var jobIndustry = $("<p>").text("Industry: " + data[i].industry); 
+               var jobIndustry = $("<p>").html("<span class='textBold'>Industry: </span>" + data[i].industry); 
                jobDiv.append(jobIndustry, $("<hr>"));
                $("#jobDisplay").append(jobDiv);
             }
@@ -187,12 +187,11 @@ $(document).on("click", ".btn", function() {
       console.log(data+ "Eventful data");
       for(var i = 0;i < data.length;i++){
         var eventDiv = $("<div>");
-        var eventTitle = $("<p>").text("Event Title: " + data[i].title);
-        eventTitle.addClass("jobName");
+        var eventTitle = $("<p>").html("<span class='textBold'>Event Title: </span>" + data[i].title);
         eventDiv.append(eventTitle);
-        var eventAddress = $("<p>").text("Location: " + data[i].venue_address);
+        var eventAddress = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].venue_address);
         eventDiv.append(eventAddress);
-        var eventUrl = $("<p>").text("Website: " + data[i].url);
+        var eventUrl = $("<p>").html("<span class='textBold'>Website: </span><a href='" + data[i].url + "' target= '_blank'>" + data[i].url + "</a>");
         eventDiv.append(eventUrl, $("<hr>"));
         $("#eventDisplay").append(eventDiv);
       }
