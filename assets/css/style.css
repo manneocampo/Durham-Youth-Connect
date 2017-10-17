@@ -16,6 +16,10 @@
 	display:table;
 	margin:0 auto;
 }
+#accolades {
+	width: 70%;
+	margin-top: 5px;
+}
 
 #enterTopic {
 	font-size: 20px;
@@ -60,8 +64,8 @@ justify-content: center;
 	color: #e3f2fd;
 }
 
-#meetupDisplay {
-	height: 250px;
+.displayPanel {
+	height: 300px;
 	overflow: auto;
 }
 
@@ -98,6 +102,13 @@ justify-content: center;
 	background-color: white;
 	margin-bottom: 5px;
 }
+
+
+.jobName {
+	font-weight: bolder;
+	font-size: 18px;
+}
+
 .moreInfo {
 /*	border: 1px solid #ccd2d5;
 */	margin-top: 20px;
@@ -105,8 +116,7 @@ justify-content: center;
 	padding: 10px;
 }
 
-
-
 /*.row {
      margin-bottom: 0px; ???what is this for?
 }*/
+
