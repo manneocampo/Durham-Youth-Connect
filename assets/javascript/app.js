@@ -175,7 +175,7 @@ $(document).on("click", ".btn", function() {
         eventDiv.append(eventTitle);
         var eventAddress = $("<p>").text("Location: " + data[i].venue_address);
         eventDiv.append(eventAddress);
-        var eventUrl = $("<p>").text("Website: " + data[i].url);
+        var eventUrl = $("<p>").text("Website: " + $("<a href='") + data[i].url + $("'</a>"));
         eventDiv.append(eventUrl, $("<hr>"));
         $("#eventDisplay").append(eventDiv);
       }
