@@ -3,14 +3,13 @@ topics = [
     className: "art",
     meetupCat: 1
 },
-{   topicName: "History",
-    className: "history",
+{   topicName: "Business",
+    className: "business",
     meetupCat: 0
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
-    meetupCat: 18
-    //add category 36 too
+    meetupCat: 2
 },
 {   topicName: "Technology",
     className: "technology",
@@ -52,9 +51,17 @@ topics = [
     className: "animals",
     meetupCat: 26
 },
-{   topicName: "Volunteering",
-    className: "volunteering",
-    meetupCat: 0
+{   topicName: "Languages",
+    className: "languages",
+    meetupCat: 16
+},
+{   topicName: "Education",
+    className: "education",
+    meetupCat: 6
+},
+{   topicName: "Sports",
+    className: "sports",
+    meetupCat: 16
 }
 ];
 
@@ -67,8 +74,18 @@ function searchArray (array, topic) {
 
 //Turning topics array into buttons
 function renderButtons() {
-    $("#buttons-view").empty();
-    console.log("buttons view");
+  $("#buttons-view").empty();
+
+  //Creates a sorted array of topicName only
+  // var arr = [];
+  // var arrSorted = arr.sort();
+  //   for(var i = 0; i < topics.length; i++){
+  //     var Sorted = topics[i].topicName;
+  //     arr.push(topics[i].topicName);   
+  //   }
+  // arr.sort();
+  // console.log("ArrSorted: " + arrSorted);
+
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
         a.addClass("btn btn-info displayer" + topics[i].className);
