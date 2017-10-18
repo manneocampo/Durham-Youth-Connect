@@ -2,6 +2,7 @@
 	outline: 1px solid blue;
 }*/
 
+
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
 	background-size: cover;
@@ -71,7 +72,7 @@ justify-content: center;
 }
 #jobDisplay {
 	height: 500px;
-
+	overflow: auto;
 }
 
 #eventDisplay {
