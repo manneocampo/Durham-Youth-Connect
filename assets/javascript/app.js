@@ -95,17 +95,6 @@ function searchArray (array, topic) {
 //Turning topics array into buttons
 function renderButtons() {
   $("#buttons-view").empty();
-
-  //Creates a sorted array of topicName only
-  // var arr = [];
-  // var arrSorted = arr.sort();
-  //   for(var i = 0; i < topics.length; i++){
-  //     var Sorted = topics[i].topicName;
-  //     arr.push(topics[i].topicName);   
-  //   }
-  // arr.sort();
-  // console.log("ArrSorted: " + arrSorted);
-
     for (var i = 0; i < topics.length; i++) {
         var a = $("<button>");
         a.addClass("btn btn-info displayer" + topics[i].className);
