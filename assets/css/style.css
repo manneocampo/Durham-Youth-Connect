@@ -14,11 +14,36 @@
 }
 
 #accDiv {
+	background: url(../images/Dapper11.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:215px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
+#accDiv2 {
+	background: url(../images/Dapper.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:315px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
+
+<<<<<<< HEAD
+#id {
+	padding-bottom: -20px;
+}
+
+#accDiv {
 	background: url(../images/Dapper12.png), #448aff;
 	background-size: cover;
 	background-repeat: no-repeat;
-	height:215px;
-	padding-bottom: 15px;
+	height:200px;
 }
 
 #headerTitle {
@@ -61,7 +86,7 @@ justify-content: center;
 
 }
 .btn {
-	background-color:#0d47a1;
+	background-color:#1e88e5;
 	margin: 5px;
 	margin-left:13px;
 	font-size:13px;
@@ -70,7 +95,7 @@ justify-content: center;
 	min-width: 189px;
 }
 .panel {
-	background-color:#0d47a1;
+	background-color:#1e88e5;
 	font-size: 20px;
 	color: #e3f2fd;
 }

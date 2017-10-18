@@ -1,3 +1,17 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyBaTWuv65vV2X7fq4ZyFZF9EYtGZEdq0gQ",
+  authDomain: "project-1-d9436.firebaseapp.com",
+  databaseURL: "https://project-1-d9436.firebaseio.com",
+  projectId: "project-1-d9436",
+  storageBucket: "project-1-d9436.appspot.com",
+  messagingSenderId: "30444118905"
+};
+firebase.initializeApp(config);
+
+//Setting variable for firebase data
+var database = firebase.database();
+
 topics = [
 {   topicName: "Art",
     className: "art",
@@ -5,7 +19,7 @@ topics = [
 },
 {   topicName: "Business",
     className: "business",
-    meetupCat: 0
+    meetupCat: 2
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
@@ -93,7 +107,7 @@ function renderButtons() {
     };
 }
 
-$(document).on("click", ".btn", function() {
+$("#buttons-view").on("click", ".btn", function() {
 
 
     var _this=this;
@@ -121,7 +135,7 @@ $(document).on("click", ".btn", function() {
                var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span>" + data[i].link);
+               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span><a href='http://" + data[i].link + "' target= '_blank'>" + data[i].link + "</a>");
                meetupDiv.append(meetupLink, $("<hr>"));
 
                // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
@@ -196,6 +210,30 @@ $(document).on("click", ".btn", function() {
 });
 
 renderButtons();
+
+
+//Saves data into variables
+$("#submitInput").on("click", function(event){
+  event.preventDefault();
+  var firstName = $("#first_name").val();
+  console.log(firstName);
+  var lastName = $("#last_name").val();
+  var email = $("#email").val();
+
+  var newContact = {
+    name: firstName,
+    last: lastName,
+    email: email
+  }
+  //Pushing data into firebase
+  database.ref().push(newContact);
+
+  //Clears input field
+  $("#first_name").val("");
+  $("#last_name").val("");
+  $("#email").val("");
+})
+
 
 
 
