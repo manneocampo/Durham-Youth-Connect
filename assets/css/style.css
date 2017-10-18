@@ -8,14 +8,18 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	height:230px;
+	margin-top:10px;
 }
 
 #headerTitle {
 	color: rgb(255,247,247);
 	line-height: 110%;
-	font-size: 4vw;
+	font-size: 3.5vw;
 	display:table;
 	margin:0 auto;
+	padding:5px;
+	font-family: 'Slabo 27px', serif;
+	font-family: 'Merriweather', serif;
 }
 #accolades {
 	width: 70%;
@@ -119,6 +123,8 @@ justify-content: center;
 */	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
+	font-family: 'Slabo 27px', serif;
+	font-size:19px;
 }
 
 .textBold {
