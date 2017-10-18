@@ -23,6 +23,16 @@
     background-position: center;
     background-color: white;
 }
+#accDiv2 {
+	background: url(../images/Dapper.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:315px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
 
 
 #headerTitle {
