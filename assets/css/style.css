@@ -1,13 +1,22 @@
 /** {
 	outline: 1px solid blue;
 }*/
-
-
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
 	background-size: cover;
 	background-repeat: no-repeat;
 	height:230px;
+}
+
+#id {
+	padding-bottom: -20px;
+}
+
+#accDiv {
+	background: url(../images/Dapper12.png), #448aff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:200px;
 }
 
 #headerTitle {
@@ -16,10 +25,6 @@
 	font-size: 4vw;
 	display:table;
 	margin:0 auto;
-}
-#accolades {
-	width: 70%;
-	margin-top: 5px;
 }
 
 #enterTopic {
@@ -114,9 +119,8 @@ justify-content: center;
 }
 
 
-.moreInfo {
-/*	border: 1px solid #ccd2d5;
-*/	margin-top: 20px;
+#moreInfo {
+	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
 }
