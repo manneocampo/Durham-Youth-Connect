@@ -6,8 +6,35 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 	height:230px;
+	margin-top:10px;
 }
 
+#id {
+	padding-bottom: -20px;
+}
+
+#accDiv {
+	background: url(../images/Dapper11.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:215px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
+#accDiv2 {
+	background: url(../images/Dapper.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:315px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
+
+<<<<<<< HEAD
 #id {
 	padding-bottom: -20px;
 }
@@ -22,9 +49,12 @@
 #headerTitle {
 	color: rgb(255,247,247);
 	line-height: 110%;
-	font-size: 4vw;
+	font-size: 3.5vw;
 	display:table;
 	margin:0 auto;
+	padding:5px;
+	font-family: 'Slabo 27px', serif;
+	font-family: 'Merriweather', serif;
 }
 
 #enterTopic {
@@ -123,6 +153,8 @@ justify-content: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
+	font-family: 'Slabo 27px', serif;
+	font-size:19px;
 }
 
 .textBold {
