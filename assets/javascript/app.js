@@ -65,6 +65,12 @@ topics = [
 }
 ];
 
+var sortedArr = topics.sort(function(a,b){
+  if(a.topicName < b.topicName) return -1;
+      if(a.topicName > b.topicName) return 1;
+      return 0;
+})
+
 function searchArray (array, topic) {
     console.log(array, topic);
     return array.filter(function(obj){
