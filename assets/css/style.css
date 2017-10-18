@@ -76,7 +76,8 @@
 }
 li a.active {
 	background-color: #90caf9;
-	font-family: 'Oswald', sans-serif;
+	/*font-family: 'Oswald', sans-serif;
+	can't figure out how to make bigger font*/ 
 }
 
 #buttons-view {
