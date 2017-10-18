@@ -17,6 +17,10 @@
 	display:table;
 	margin:0 auto;
 }
+#accolades {
+	width: 70%;
+	margin-top: 5px;
+}
 
 #enterTopic {
 	font-size: 20px;
@@ -61,13 +65,14 @@ justify-content: center;
 	color: #e3f2fd;
 }
 
+
 #meetupDisplay {
 	height: 500px;
 	overflow: auto;
 }
 #jobDisplay {
 	height: 500px;
-	overflow: auto;
+
 }
 
 #eventDisplay {
