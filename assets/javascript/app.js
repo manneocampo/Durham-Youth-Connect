@@ -208,6 +208,42 @@ $(document).on("click", ".btn", function() {
 
 renderButtons();
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBaTWuv65vV2X7fq4ZyFZF9EYtGZEdq0gQ",
+    authDomain: "project-1-d9436.firebaseapp.com",
+    databaseURL: "https://project-1-d9436.firebaseio.com",
+    projectId: "project-1-d9436",
+    storageBucket: "",
+    messagingSenderId: "30444118905"
+  };
+  firebase.initializeApp(config);
+
+//Setting variable for firebase data
+var database = firebase.database();
+
+//Saves data into variables
+$("#submitInput").on("click", function(event){
+  event.preventDefault();
+  var firstName = $("#first_name").val();
+  var lastName = $("#last_name").val();
+  var email = $("#email").val();
+
+  var newContact = {
+    name = firstName,
+    last = lastName,
+    email = email
+  }
+  //Pushing data into firebase
+  database.ref().push(newContact);
+
+  //Clears input field
+  $("#first_name").val("");
+  $("#last_name").val("");
+  $("#email").val("");
+})
+
+
 
 
 // //------Add new topic/button----------------------
