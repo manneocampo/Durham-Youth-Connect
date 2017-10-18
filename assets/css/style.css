@@ -119,6 +119,8 @@ justify-content: center;
 */	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
+	font-family: 'Slabo 27px', serif;
+	font-size:19px;
 }
 
 .textBold {
