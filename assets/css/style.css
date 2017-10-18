@@ -14,12 +14,26 @@
 }
 
 #accDiv {
-	background: url(../images/Dapper12.png), #448aff;
-	background-size: cover;
+	background: url(../images/Dapper11.png), #448aff;
+	/*background-size: cover;*/
 	background-repeat: no-repeat;
 	height:215px;
-	padding-bottom: 15px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
 }
+#accDiv2 {
+	background: url(../images/Dapper.png), #448aff;
+	/*background-size: cover;*/
+	background-repeat: no-repeat;
+	height:315px;
+	padding-bottom: 0px;
+	background-size: contain;
+    background-position: center;
+    background-color: white;
+}
+
 
 #headerTitle {
 	color: rgb(255,247,247);
