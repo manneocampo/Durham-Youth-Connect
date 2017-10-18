@@ -2,6 +2,7 @@
 	outline: 1px solid blue;
 }*/
 
+
 #headerDiv {
 	background: url(../images/DurhamSunset2.jpg), #448aff;
 	background-size: cover;
@@ -64,11 +65,20 @@ justify-content: center;
 	color: #e3f2fd;
 }
 
-.displayPanel {
-	height: 300px;
+
+#meetupDisplay {
+	height: 500px;
+	overflow: auto;
+}
+#jobDisplay {
+	height: 500px;
 	overflow: auto;
 }
 
+#eventDisplay {
+	height: 500px;
+	overflow: auto;	
+}
 
 .wrap {
 	word-wrap:break-word;
@@ -104,16 +114,16 @@ justify-content: center;
 }
 
 
-.jobName {
-	font-weight: bolder;
-	font-size: 18px;
-}
-
 .moreInfo {
 /*	border: 1px solid #ccd2d5;
 */	margin-top: 20px;
 	margin-bottom: 20px;
 	padding: 10px;
+}
+
+.textBold {
+	font-weight: bolder;
+	font-size: 16px;
 }
 
 /*.row {
