@@ -7,6 +7,13 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
 </head>
 <body>
 	<div class="container">
@@ -108,14 +115,6 @@
 					</div>
 
 
-
-
-
-
-
-
-
-
 					<div class="row">
 						<div class="col s12 m4">
 							<!-- insert here -->
@@ -178,7 +177,37 @@
 	        	</li>
 	     	</ul>
 		</div>			
+		<!-- form -->  
+	<div class="row">
+		<div class="row">
+			<div class="moreInfo">
+			<h5>Newsletter Signup or Feature your Business! <br> Please submit the form below.</h5>
+			</div>
+	    <form class="col s12">
+	      <div class="row">
+	        <div class="input-field col s6">
+	          <input placeholder="Homer" id="first_name" type="text" class="validate">
+	          <label for="first_name">First Name</label>
+	        </div>
+	        <div class="input-field col s6">
+	          <input placeholder="Simpson" id="last_name" type="text" class="validate">
+	          <label for="last_name">Last Name</label>
+	        </div>
+	      </div>
+	      <div class="row">
+	        <div class="input-field col s12">
+	          <input id="email" type="email" class="validate">
+	          <label for="email">Email</label>
+	        </div>
+	      </div>
+	       <button id="submitInput" class="btn waves-effect waves-light" type="submit" name="action">Submit
+		    <i class="material-icons right">send</i>
+		  </button>
+	    </form>
 	</div>
+</div>
+
+
  	<!--Link to jQuery CDN -->
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
  	<!-- Compiled and minified JavaScript -->
