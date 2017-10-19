@@ -152,7 +152,7 @@ $("#buttons-view").on("click", ".btn", function() {
         var jobTitle = $(_this).attr("job-name");
         console.log(jobTitle + "Job Title");
         var glassDoorKey = gKey || "";
-        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=" + glassDoorKey + "&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=" + glassDoorKey + "&radius=30&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
         $.ajax({
             url: queryURL,
             crossDomain: true,
@@ -163,13 +163,14 @@ $("#buttons-view").on("click", ".btn", function() {
            console.log(data + "glassdoor data");
            //Goes through each index to display data
             for (var i = 0; i < data.length; i++){
+               var attributionURL = data[i].featuredReview && data[i].featuredReview.attributionURL ? data[i].featuredReview.attributionURL : "";
                //creating new div to display information
                var jobDiv = $("<div>");
                var jobName = $("<p>").html("<span class='textBold'>Company Name: </span>" + data[i].name);
                jobDiv.append(jobName);
                var jobWorkLife = $("<p>").html("<span class='textBold'>Work Life Balance Rating: </span>" + data[i].workLifeBalanceRating);
                jobDiv.append(jobWorkLife);
-               var jobWebsite = $("<p>").html("<span class='textBold'>Website: </span><a href='http://" + data[i].website + "' target= '_blank'>" + data[i].website + "</a>");
+               var jobWebsite = $("<p>").html("<span class='textBold'>Website: </span><a href='" + attributionURL + "' target= '_blank'>" + attributionURL + "</a>");
                console.log(jobWebsite + "Website for glassdoor");               
                jobDiv.append(jobWebsite);
                var jobRating = $("<p>").html("<span class='textBold'>Rating: </span>" + data[i].ratingDescription);
