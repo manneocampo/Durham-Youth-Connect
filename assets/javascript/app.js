@@ -19,11 +19,11 @@ topics = [
 },
 {   topicName: "Business",
     className: "business",
-    meetupCat: 0
+    meetupCat: 2
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
-    meetupCat: 2
+    meetupCat: 36
 },
 {   topicName: "Technology",
     className: "technology",
@@ -135,11 +135,10 @@ $("#buttons-view").on("click", ".btn", function() {
                var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span>" + data[i].link);
-               meetupDiv.append(meetupLink, $("<hr>"));
+               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span><a href='" + data[i].link + "' target= '_blank'>" + data[i].link + "</a>");
+              meetupDiv.append(meetupLink);
+              meetupDiv.append(meetupLink, $("<hr>"));
 
-               // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
-               // meetupDiv.append(nextMeeting);
                $("#meetupDisplay").append(meetupDiv);
             }
         })
