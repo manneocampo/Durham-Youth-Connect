@@ -34,6 +34,17 @@
     background-color: white;
 }
 
+<<<<<<< HEAD
+#id {
+	padding-bottom: -20px;
+}
+
+#accDiv {
+	background: url(../images/Dapper12.png), #448aff;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height:200px;
+}
 
 #headerTitle {
 	color: rgb(255,247,247);

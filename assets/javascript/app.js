@@ -19,7 +19,7 @@ topics = [
 },
 {   topicName: "Business",
     className: "business",
-    meetupCat: 0
+    meetupCat: 2
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
@@ -135,7 +135,7 @@ $("#buttons-view").on("click", ".btn", function() {
                var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span>" + data[i].link);
+               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span><a href='http://" + data[i].link + "' target= '_blank'>" + data[i].link + "</a>");
                meetupDiv.append(meetupLink, $("<hr>"));
 
                // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
