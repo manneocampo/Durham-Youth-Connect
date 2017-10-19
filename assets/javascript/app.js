@@ -115,7 +115,8 @@ $("#buttons-view").on("click", ".btn", function() {
     function displayMeetups() {
         $("#meetupDisplay").empty();
         var meetupCat = searchArray(topics, $(_this).attr("job-name"));
-        var queryURL = "https://api.meetup.com/find/groups?key=5c494f7b021e603a26228786855b&zip=27703&radius=10&category=" + meetupCat;
+        var meetUpKey = mKey || "";
+        var queryURL = "https://api.meetup.com/find/groups?key=" + meetUpKey + "&zip=27703&radius=10&category=" + meetupCat;
         $.ajax({
             url: queryURL,
             crossDomain: true,
@@ -150,7 +151,8 @@ $("#buttons-view").on("click", ".btn", function() {
       $("#jobDisplay").empty();
         var jobTitle = $(_this).attr("job-name");
         console.log(jobTitle + "Job Title");
-        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=ceLZoILrTzK&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
+        var glassDoorKey = gKey || "";
+        var queryURL = "https://api.glassdoor.com/api/api.htm?t.p=207039&t.k=" + glassDoorKey + "&userip=0.0.0.0&q=" + jobTitle + "&useragent=&format=json&v=1&action=employers";
         $.ajax({
             url: queryURL,
             crossDomain: true,
@@ -184,7 +186,8 @@ $("#buttons-view").on("click", ".btn", function() {
       $("#eventDisplay").empty();
       var eventTitle = $(_this).attr("job-name");
       console.log(eventTitle + "Event Title");
-      var queryURL = "https://api.eventful.com/json/events/search?app_key=DF6QBLC8cHbjpQZc&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
+      var eventfulKey = eKey || "";
+      var queryURL = "https://api.eventful.com/json/events/search?app_key=" + eventfulKey + "&keywords=" + eventTitle + "&location=durham&within=40&category=conference&date=Future";
     $.ajax({
       url: queryURL,
       crossDomain: true,
