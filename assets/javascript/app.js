@@ -19,11 +19,11 @@ topics = [
 },
 {   topicName: "Business",
     className: "business",
-    meetupCat: 0
+    meetupCat: 2
 },
 {   topicName: "Reading & Writing",
     className: "readingWriting",
-    meetupCat: 2
+    meetupCat: 36
 },
 {   topicName: "Technology",
     className: "technology",
@@ -135,14 +135,11 @@ $("#buttons-view").on("click", ".btn", function() {
                var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-              console.log(data[i].link)
                var meetupLink = $("<p>").html("<span class='textBold'>Website: </span><a href='" + data[i].link + "' target= '_blank'>" + data[i].link + "</a>");
-               meetupDiv.append(meetupLink, $("<hr>"));
+              meetupDiv.append(meetupLink);
+              meetupDiv.append(meetupLink, $("<hr>"));
 
-
-               // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
-               // meetupDiv.append(nextMeeting);
-               $("#meetupDisplay").append(meetupDiv);
+              $("#meetupDisplay").append(meetupDiv);
             }
         })
     }
@@ -166,7 +163,7 @@ $("#buttons-view").on("click", ".btn", function() {
             for (var i = 0; i < data.length; i++){
                //creating new div to display information
                var jobDiv = $("<div>");
-               var jobName = $("<p>").html("<span class='textBold'>Job Title: </span>" + data[i].name);
+               var jobName = $("<p>").html("<span class='textBold'>Company Name: </span>" + data[i].name);
                jobDiv.append(jobName);
                var jobWorkLife = $("<p>").html("<span class='textBold'>Work Life Balance Rating: </span>" + data[i].workLifeBalanceRating);
                jobDiv.append(jobWorkLife);
