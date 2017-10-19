@@ -163,7 +163,7 @@ $("#buttons-view").on("click", ".btn", function() {
             for (var i = 0; i < data.length; i++){
                //creating new div to display information
                var jobDiv = $("<div>");
-               var jobName = $("<p>").html("<span class='textBold'>Job Title: </span>" + data[i].name);
+               var jobName = $("<p>").html("<span class='textBold'>Company Name: </span>" + data[i].name);
                jobDiv.append(jobName);
                var jobWorkLife = $("<p>").html("<span class='textBold'>Work Life Balance Rating: </span>" + data[i].workLifeBalanceRating);
                jobDiv.append(jobWorkLife);
