@@ -139,7 +139,7 @@ $("#buttons-view").on("click", ".btn", function() {
               meetupDiv.append(meetupLink);
               meetupDiv.append(meetupLink, $("<hr>"));
 
-               $("#meetupDisplay").append(meetupDiv);
+              $("#meetupDisplay").append(meetupDiv);
             }
         })
     }
@@ -255,6 +255,9 @@ $("#submitInput").on("click", function(event){
 
   // Initialize collapse button
   $(".button-collapse").sideNav();
+  // $(".button-collapse").on('click', function(){
+  //   console.log("click")
+  // })
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
