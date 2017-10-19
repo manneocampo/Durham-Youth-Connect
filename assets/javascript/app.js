@@ -135,8 +135,10 @@ $("#buttons-view").on("click", ".btn", function() {
                var meetupLocation = $("<p>").html("<span class='textBold'>Location: </span>" + data[i].localized_location);
                meetupDiv.append(meetupLocation);
 
-               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span>" + data[i].link);
+              console.log(data[i].link)
+               var meetupLink = $("<p>").html("<span class='textBold'>Website: </span><a href='" + data[i].link + "' target= '_blank'>" + data[i].link + "</a>");
                meetupDiv.append(meetupLink, $("<hr>"));
+
 
                // var nextMeeting = $("<p>").text("Next Meetup" + data[i].next_event.time);
                // meetupDiv.append(nextMeeting);
@@ -256,6 +258,9 @@ $("#submitInput").on("click", function(event){
 
   // Initialize collapse button
   $(".button-collapse").sideNav();
+  // $(".button-collapse").on('click', function(){
+  //   console.log("click")
+  // })
   // Initialize collapsible (uncomment the line below if you use the dropdown variation)
   //$('.collapsible').collapsible();
 
