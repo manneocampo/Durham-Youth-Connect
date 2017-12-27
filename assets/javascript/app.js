@@ -1,6 +1,6 @@
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyBaTWuv65vV2X7fq4ZyFZF9EYtGZEdq0gQ",
+  fKey: "",
   authDomain: "project-1-d9436.firebaseapp.com",
   databaseURL: "https://project-1-d9436.firebaseio.com",
   projectId: "project-1-d9436",
@@ -27,7 +27,7 @@ topics = [
 },
 {   topicName: "Technology",
     className: "technology",
-    meetupCat: 34   
+    meetupCat: 34
 },
 {   topicName: "Health & Wellness",
     className: "healthWellness",
@@ -171,11 +171,11 @@ $("#buttons-view").on("click", ".btn", function() {
                var jobWorkLife = $("<p>").html("<span class='textBold'>Work Life Balance Rating: </span>" + data[i].workLifeBalanceRating);
                jobDiv.append(jobWorkLife);
                var jobWebsite = $("<p>").html("<span class='textBold'>Website: </span><a href='" + attributionURL + "' target= '_blank'>" + attributionURL + "</a>");
-               console.log(jobWebsite + "Website for glassdoor");               
+               console.log(jobWebsite + "Website for glassdoor");
                jobDiv.append(jobWebsite);
                var jobRating = $("<p>").html("<span class='textBold'>Rating: </span>" + data[i].ratingDescription);
                jobDiv.append(jobRating);
-               var jobIndustry = $("<p>").html("<span class='textBold'>Industry: </span>" + data[i].industry); 
+               var jobIndustry = $("<p>").html("<span class='textBold'>Industry: </span>" + data[i].industry);
                jobDiv.append(jobIndustry, $("<hr>"));
                $("#jobDisplay").append(jobDiv);
             }
@@ -193,7 +193,7 @@ $("#buttons-view").on("click", ".btn", function() {
       url: queryURL,
       crossDomain: true,
       dataType: 'jsonp',
-      method: "GET"  
+      method: "GET"
     }).done(function(response){
       var data = response.events ? response.events.event : [];
       console.log(data+ "Eventful data");
