@@ -15,4 +15,4 @@ The first group project.
 
 Provide Durham youth with a tailored resource for researching job opportunities and exploring new careers and interests. Visitors will be asked to select from a variety of topics that interest them, and we will return relevant job opportunities, Meetup groups and public events that will help them network and discover new interests. We will also reference other local organizations that would be of interest and whose missions align well with ours.
 
-This project utilizes HTML5, CSS3, Materialize, JavaScript, jQuery, APIs, Firebase, git version control.
+###### This project utilizes HTML5, CSS3, Materialize, JavaScript, jQuery, APIs, Firebase, git version control.
