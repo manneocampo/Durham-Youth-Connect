@@ -3,17 +3,13 @@
 The first group project.
 
 ## Overview:
-1. The project uses three APIs.
-+
-2. Ajax is used to pull data
-+
-3. Materialize was a new framework that we learned about as a group and utilized during the project creation
-+
-4. Firebase was used for persistent data storage
-+
-5. The web-app is mobile responsive
-+
-6. Git version control used for group collaboration
++ The project uses three APIs.
++ Ajax is used to pull data
++ Materialize was a new framework that we learned about as a group and utilized during the project creation
++ Firebase was used for persistent data storage
++ The web-app is mobile responsive
++ Git version control used for group collaboration
+
 
 ## Our Project Description:
 
